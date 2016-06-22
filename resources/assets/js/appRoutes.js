@@ -6,8 +6,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', '
                 controller: 'EventController'
             })
             .when('/event/:id', {
-                templateUrl: '/partials/event/view',
+                templateUrl: '/partials/events/view',
                 controller: 'EventController'
+            })
+            .when('/bookings', {
+                templateUrl: '/partials/bookings/index',
+                controller: 'BookingController'
             })
             .otherwise({
                 redirectTo: '/'

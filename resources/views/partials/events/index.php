@@ -6,7 +6,7 @@
     <div class="row" ng-repeat="event in events">
         <div class="col-lg-6">
             <div class="input-group">
-                <a ng-href="/event/{{ event.id }}"
+                <a ng-href="/event/{{ event.id }}">{{ event.name }}</a>
             </div>
         </div>
     </div>

@@ -5,7 +5,11 @@ namespace Booking\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Booking\Http\Requests;
+use Booking\Http\Requests\BookingRequest;
 use Booking\Http\Controllers\Controller;
+use Booking\Booking;
+use Booking\Event;
+use Booking\Customer;
 
 class BookingController extends Controller
 {
@@ -14,9 +18,9 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        return Booking::with('event', 'customer')->get();
     }
 
     /**
@@ -35,9 +39,20 @@ class BookingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BookingRequest $request)
     {
-        //
+        $input = $request->all();
+        $input['customer']['health_problems'] = json_encode($input['customer']['health_problems']);
+
+        $event = Event::find($input['event']['id']);
+
+        $booking = Booking::create($input['booking']);
+        $event->bookings()->save($booking);
+
+        $customer = Customer::create($input['customer']);
+        $customer->bookings()->save($booking);
+
+        return response()->json([ 'success' => true ]);
     }
 
     /**

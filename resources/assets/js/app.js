@@ -2,7 +2,13 @@ angular.module('bookingApp', [
   'ngRoute',
   'ngResource',
   'ngStorage',
+  'ngMessages',
+  'ui.bootstrap',
+  'checklist-model',
   'appRoutes',
   'EventController',
-  'EventService'
+  'EventService',
+  'BookingController',
+  'BookingService',
+  'HealthProblemService',
 ]);

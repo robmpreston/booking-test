@@ -23,6 +23,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li ng-class="{ active: isActive('/') }"><a href="/">List Events</a></li>
+                <li ng-class="{ active: isActive('/bookings') }"><a href="/bookings">List Bookings</a></li>
             </ul>
         </div>
     </div>

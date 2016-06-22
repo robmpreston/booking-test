@@ -29,6 +29,8 @@ Route::get('/partials/{category}/{action}/{id}', function ($category, $action = 
 
 // Getting RESTful
 Route::resource('/api/event', 'EventController');
+Route::resource('/api/health_problem', 'HealthProblemController');
+Route::resource('/api/booking', 'BookingController');
 
 // Catch all undefined routes. Always gotta stay at the bottom since order of routes matters.
 Route::any('{undefinedRoute}', function ($undefinedRoute) {
