@@ -27,13 +27,8 @@ Route::get('/partials/{category}/{action}/{id}', function ($category, $action = 
     return view(join('.', ['partials', $category, $action]));
 });
 
-// Additional RESTful routes.
-Route::post('/api/user/login', 'UserController@login');
-Route::get('/api/user/getByToken', 'UserController@getByToken');
-
 // Getting RESTful
-Route::resource('/api/todo', 'TodoController');
-Route::resource('/api/user', 'UserController');
+Route::resource('/api/event', 'EventController');
 
 // Catch all undefined routes. Always gotta stay at the bottom since order of routes matters.
 Route::any('{undefinedRoute}', function ($undefinedRoute) {

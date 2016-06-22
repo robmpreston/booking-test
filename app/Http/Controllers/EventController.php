@@ -1,10 +1,10 @@
-<?php namespace Todo\Http\Controllers;
+<?php namespace Booking\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Todo\Http\Requests;
-use Todo\Todo;
+use Booking\Http\Requests;
+use Booking\Event;
 
-class TodoController extends Controller
+class EventController extends Controller
 {
 
     private $request;
@@ -22,7 +22,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        return Todo::all();
+        return Event::all();
     }
 
     /**
@@ -42,12 +42,6 @@ class TodoController extends Controller
      */
     public function store()
     {
-        $input = $this->request->all();
-        $todo = new Todo($input);
-        if (!$todo->save()) {
-            abort(500, "Saving failed.");
-        }
-        return $todo;
     }
 
     /**
@@ -58,7 +52,7 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        return Todo::find($id);
+        return Event::find($id);
     }
 
     /**
@@ -80,12 +74,6 @@ class TodoController extends Controller
      */
     public function update($id)
     {
-        $todo = Todo::find($id);
-        $todo->body = $this->request->input('body');
-        if (!$todo->save()) {
-            abort(500, "Saving failed");
-        }
-        return $todo;
     }
 
     /**
@@ -96,7 +84,6 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        return Todo::destroy($id);
     }
 
 }

@@ -1,4 +1,4 @@
-<?php namespace Todo\Providers;
+<?php namespace Booking\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +16,7 @@ class BusServiceProvider extends ServiceProvider {
 		$dispatcher->mapUsing(function($command)
 		{
 			return Dispatcher::simpleMapping(
-				$command, 'Todo\Commands', 'Todo\Handlers\Commands'
+				$command, 'Booking\Commands', 'Booking\Handlers\Commands'
 			);
 		});
 	}

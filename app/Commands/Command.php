@@ -1,4 +1,4 @@
-<?php namespace Todo\Commands;
+<?php namespace Booking\Commands;
 
 abstract class Command {
 

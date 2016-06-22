@@ -1,4 +1,4 @@
-<?php namespace Todo\Events;
+<?php namespace Booking\Events;
 
 abstract class Event {
 

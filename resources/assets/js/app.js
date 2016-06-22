@@ -1,13 +1,8 @@
-angular.module('todoApp', [
+angular.module('bookingApp', [
   'ngRoute',
   'ngResource',
   'ngStorage',
   'appRoutes',
-  'enterStroke',
-  'MainController',
-  'TodoController',
-  'UserController',
-  'UserService',
-  'TodoService',
+  'EventController',
+  'EventService'
 ]);
-

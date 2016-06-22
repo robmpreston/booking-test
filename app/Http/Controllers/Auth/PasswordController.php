@@ -1,8 +1,8 @@
 <?php
 
-namespace Todo\Http\Controllers\Auth;
+namespace Booking\Http\Controllers\Auth;
 
-use Todo\Http\Controllers\Controller;
+use Booking\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

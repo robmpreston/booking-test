@@ -14,7 +14,18 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		DB::table('events')->insert([
+            'name' => 'Skydiving - Tandem',
+			'description' => 'Give the gift of an extreme adrenaline rush!'
+        ]);
+
+		DB::table('health_problems')->insert([
+			'name' => 'High Blood Pressure'
+		], [
+			'name' => 'Epilepsy'
+		], [
+			'name' => 'Arthritis'
+		]);
 	}
 
 }

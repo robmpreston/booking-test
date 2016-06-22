@@ -1,10 +1,10 @@
 <?php
 
-namespace Todo\Http\Controllers\Auth;
+namespace Booking\Http\Controllers\Auth;
 
-use Todo\User;
+use Booking\User;
 use Validator;
-use Todo\Http\Controllers\Controller;
+use Booking\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
